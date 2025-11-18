@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=PackOfCrisps
+comment0.text=\n\ Simulates\ a\ packet\ of\ crisps.\n\ Starts\ with\ 10\ crisps.\n\ Can\ either\ be\ open\ or\ closed.\n\ Crisps\ can\ only\ be\ eaten\ when\ it\ is\ open.\n\ \n\ @author\ B\n\ @version\ v0.0.1\n
+comment1.params=flavour
+comment1.target=PackOfCrisps(java.lang.String)
+comment1.text=\n\ Constructs\ a\ new\ packet\ of\ crisps\ with\ the\ specified\ flavour.\n\ Initially\ contains\ 10\ crisps.\n\ \n\ @param\ \ \ flavour\ the\ flavour\ of\ the\ crisps.\n
+comment2.params=
+comment2.target=boolean\ isEmpty()
+comment2.text=\n\ Gets\ whether\ the\ number\ of\ crisps\ is\ greater\ than\ 0.\n\ @return\ \ Whether\ the\ crisp\ packet\ is\ empty\ or\ not.\n
+comment3.params=
+comment3.target=boolean\ isClosed()
+comment3.text=\n\ Gets\ whether\ the\ pack\ is\ closed.\n\ @return\ Whether\ the\ crisp\ packet\ is\ closed\ or\ not.\n
+comment4.params=
+comment4.target=void\ open()
+comment4.text=\n\ Opens\ the\ crisp\ packet\ by\ setting\ open\ to\ true.\n
+comment5.params=
+comment5.target=java.lang.String\ getFlavour()
+comment5.text=\n\ Gets\ the\ flavour\ of\ the\ crisps.\n\ @return\ The\ flavour\ of\ the\ crisps.\n
+comment6.params=
+comment6.target=void\ eatCrisp()
+comment6.text=\n\ Simulates\ eating\ a\ crisp\ by\ incrementing\ the\ amount\ of\ crisps\ in\ the\ packet\ by\ -1.\n\ Fails\ and\ outputs\ the\ corresponding\ error\ if\ either\ the\ pack\ is\ empty\ or\ not\ yet\ open.\n
+numComments=7
