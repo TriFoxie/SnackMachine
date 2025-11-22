@@ -27,6 +27,7 @@ public class Student
         idNumber = "student" + STUDENT_ID;
         pocket = new Pocket(20);
         packet = null;
+        this.snackMachine = snackMachine;
     }
     
     private void buyCrisps() {
@@ -53,7 +54,7 @@ public class Student
      * If the student's packet is empty, it is discarded.
      */
     public void snackTime() {
-        if (packet.equals(null)) {
+        if (packet == null) {
             System.out.println(idNumber + " is buying a pack of crisps.");
             buyCrisps();
         } else if (packet.isClosed()) {
