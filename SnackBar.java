@@ -34,6 +34,9 @@ public class SnackBar
             students.add(new Student(randomFlavour(), snackMachine));
         }
     }
+    public SnackBar() {
+        
+    }//Alt blank constructor for use by CLI help message.
     
     private String randomFlavour() {
         return flavours[rnd.nextInt(flavours.length)];
@@ -74,4 +77,32 @@ public class SnackBar
             students.get(rnd.nextInt(students.size())).snackTime();
         }
     }
+    
+    public void help() {
+        String helpMsg = "========== Help ==========\n" +
+            "Arguments:\n" +
+            " 0 | int nSteps:       The amount of steps to run the simulation for.          Default 200\n" +
+            " 1 | int nStudents:    The amount of students to include in the simulation.    Default 10.\n" +
+            " 2 | int nPackets:     The amount of packets to include in the snack machine.  Default 70.\n" +
+            " 3 | int cost:         The cost of individual crisp packets.                   Default 2.\n" +
+            "If left blank, arguments take their default values.\n" +
+            "Argument 0 can be replaced with 'help' to display this message.";
+        System.out.println(helpMsg);
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(args + "");
+        if (args[0].equals("help")) {
+            SnackBar sb = new SnackBar();
+            sb.help();
+        } else {
+            int nSteps = (args[0] != null) ? Integer.parseInt(args[0]) : 200;
+            int nStudents = (args[1] != null) ? Integer.parseInt(args[1]) : 10;
+            int nPackets = (args[2] != null) ? Integer.parseInt(args[2]) : 70;
+            int cost = (args[3] != null) ? Integer.parseInt(args[3]) : 2;
+            
+            SnackBar sb = new SnackBar(nStudents, nPackets, cost);
+            sb.runSnackBar(nSteps);
+        }
+    } 
 }
