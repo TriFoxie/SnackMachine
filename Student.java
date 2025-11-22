@@ -42,6 +42,9 @@ public class Student
             (snackMachine.getCost() - pocket.pennyCount()) + 
             " more pennies.");
         } else {
+            for (int i = 0; i < snackMachine.getCost(); i++) {
+                snackMachine.insertMoney(pocket.removePenny());
+            }
             packet = snackMachine.buyPack(favouriteFlavour);
         }
     }

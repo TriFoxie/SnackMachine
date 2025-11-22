@@ -81,9 +81,9 @@ public class SnackBar
             "Ex:    java SnackBar 100 20 50 2\n" +
             "\n" +
             "Arguments:\n" +
-            " 0 | nSteps:       The amount of steps to run the simulation for.          Default 50.\n" +
+            " 0 | nSteps:       The amount of steps to run the simulation for.          Default 150.\n" +
             " 1 | nStudents:    The amount of students to include in the simulation.    Default 10.\n" +
-            " 2 | nPackets:     The amount of packets to include in the snack machine.  Default 70.\n" +
+            " 2 | nPackets:     The amount of packets to include in the snack machine.  Default 10.\n" +
             " 3 | cost:         The cost of individual crisp packets.                   Default 2.\n" +
             "If left blank, arguments take their default values.\n" +
             "\n" +
@@ -92,9 +92,9 @@ public class SnackBar
     }
     
     public static void main(String[] args) {
-        String nSteps = (1 <= args.length) ? args[0] : "50";
+        String nSteps = (1 <= args.length) ? args[0] : "150";
         String nStudents = (2 <= args.length) ? args[1] : "10";
-        String nPackets = (3 <= args.length) ? args[2] : "70";
+        String nPackets = (3 <= args.length) ? args[2] : "10";
         String cost = (4 <= args.length) ? args[3] : "2";
         
         if (args.length > 4) {
