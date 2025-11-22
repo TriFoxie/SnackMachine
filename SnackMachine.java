@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Works with crisp packets.
  *
  * @author B
- * @version v0.0.1
+ * @version 0.0.1
  */
 
 public class SnackMachine

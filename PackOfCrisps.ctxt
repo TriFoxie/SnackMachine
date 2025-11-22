@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PackOfCrisps
-comment0.text=\n\ Simulates\ a\ packet\ of\ crisps.\n\ Starts\ with\ 10\ crisps.\n\ Can\ either\ be\ open\ or\ closed.\n\ Crisps\ can\ only\ be\ eaten\ when\ it\ is\ open.\n\ \n\ @author\ B\n\ @version\ v0.0.1\n
+comment0.text=\ \n\ Simulates\ a\ packet\ of\ crisps.\n\ Starts\ with\ 10\ crisps.\n\ Can\ either\ be\ open\ or\ closed.\n\ Crisps\ can\ only\ be\ eaten\ when\ it\ is\ open.\n\ \n\ @author\ B\n\ @version\ 0.0.1\n
 comment1.params=flavour
 comment1.target=PackOfCrisps(java.lang.String)
 comment1.text=\n\ Constructs\ a\ new\ packet\ of\ crisps\ with\ the\ specified\ flavour.\n\ Initially\ contains\ 10\ crisps.\n\ \n\ @param\ \ \ flavour\ the\ flavour\ of\ the\ crisps.\n

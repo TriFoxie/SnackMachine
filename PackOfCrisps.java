@@ -1,11 +1,11 @@
-/**
+/** 
  * Simulates a packet of crisps.
  * Starts with 10 crisps.
  * Can either be open or closed.
  * Crisps can only be eaten when it is open.
  * 
  * @author B
- * @version v0.0.1
+ * @version 0.0.1
  */
 public class PackOfCrisps
 {
@@ -18,7 +18,7 @@ public class PackOfCrisps
      * Initially contains 10 crisps.
      * 
      * @param   flavour the flavour of the crisps.
-    */
+     */
     public PackOfCrisps(String flavour) {
         this.flavour = flavour;
         numOfCrisps = 10;

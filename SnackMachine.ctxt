@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SnackMachine
-comment0.text=\n\ Representation\ of\ an\ automated\ vending\ machine.\n\ Works\ with\ crisp\ packets.\n\n\ @author\ B\n\ @version\ v0.0.1\n
+comment0.text=\n\ Representation\ of\ an\ automated\ vending\ machine.\n\ Works\ with\ crisp\ packets.\n\n\ @author\ B\n\ @version\ 0.0.1\n
 comment1.params=capacity\ cost
 comment1.target=SnackMachine(int,\ int)
 comment1.text=\n\ Constructs\ a\ new\ snack\ machine\ with\ specified\ capacity\ and\ cost.\n\ \n\ @param\ \ \ capacity\ \ \ \ the\ maximum\ amount\ of\ crisp\ packets\ the\ machine\ can\ hold\ at\ any\ time.\n\ @param\ \ \ cost\ \ \ \ \ \ \ \ the\ cost\ of\ each\ individual\ packet.\n

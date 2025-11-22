@@ -3,8 +3,8 @@ import java.util.HashSet;
 /**
  * Simulates a pocket for containing pennies.
  * 
- * @author Marcus
- * @version v0.0.1
+ * @author B
+ * @version 0.0.1
  */
 public class Pocket
 {

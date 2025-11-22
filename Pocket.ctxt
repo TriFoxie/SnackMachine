@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Pocket
-comment0.text=\n\ Simulates\ a\ pocket\ for\ containing\ pennies.\n\ \n\ @author\ Marcus\n\ @version\ v0.0.1\n
+comment0.text=\n\ Simulates\ a\ pocket\ for\ containing\ pennies.\n\ \n\ @author\ B\n\ @version\ 0.0.1\n
 comment1.params=size
 comment1.target=Pocket(int)
 comment1.text=\n\ Creates\ a\ new\ pocket\ with\ amount\ of\ pennies\ specified.\n\ \n\ @param\ \ \ size\ \ \ \ number\ of\ pennies\ the\ pocket\ should\ start\ with.\n
