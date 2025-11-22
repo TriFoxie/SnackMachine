@@ -15,7 +15,7 @@ public class SnackBar
     private ArrayList<Student> students;
     
     /**
-     * Constructs a new snackbar with the specified number of students and packets and the cost.
+     * Creates a new snackbar with the specified number of students and packets and the cost.
      * 
      * @param numOfStudents the number of students in teh simulation.
      * @param numOfPackets the number of crisp packets available in the snack machine.
@@ -34,9 +34,6 @@ public class SnackBar
             students.add(new Student(randomFlavour(), snackMachine));
         }
     }
-    public SnackBar() {
-        
-    }//Alt blank constructor for use by CLI help message.
     
     private String randomFlavour() {
         return flavours[rnd.nextInt(flavours.length)];
@@ -78,31 +75,40 @@ public class SnackBar
         }
     }
     
-    public void help() {
+    public static void help() {
         String helpMsg = "========== Help ==========\n" +
+            "Usage: java SnackBar <nSteps> <nStudents> <nPackets> <cost>\n" +
+            "Ex:    java SnackBar 100 20 50 2\n" +
+            "\n" +
             "Arguments:\n" +
-            " 0 | int nSteps:       The amount of steps to run the simulation for.          Default 200\n" +
-            " 1 | int nStudents:    The amount of students to include in the simulation.    Default 10.\n" +
-            " 2 | int nPackets:     The amount of packets to include in the snack machine.  Default 70.\n" +
-            " 3 | int cost:         The cost of individual crisp packets.                   Default 2.\n" +
+            " 0 | nSteps:       The amount of steps to run the simulation for.          Default 50.\n" +
+            " 1 | nStudents:    The amount of students to include in the simulation.    Default 10.\n" +
+            " 2 | nPackets:     The amount of packets to include in the snack machine.  Default 70.\n" +
+            " 3 | cost:         The cost of individual crisp packets.                   Default 2.\n" +
             "If left blank, arguments take their default values.\n" +
-            "Argument 0 can be replaced with 'help' to display this message.";
+            "\n" +
+            "'java SnackBar help' to display this message.";
         System.out.println(helpMsg);
     }
     
     public static void main(String[] args) {
-        System.out.println(args + "");
-        if (args[0].equals("help")) {
-            SnackBar sb = new SnackBar();
-            sb.help();
+        String nSteps = (1 <= args.length) ? args[0] : "50";
+        String nStudents = (2 <= args.length) ? args[1] : "10";
+        String nPackets = (3 <= args.length) ? args[2] : "70";
+        String cost = (4 <= args.length) ? args[3] : "2";
+        
+        if (args.length > 4) {
+            System.out.println("Too many arguments. Running and discarding extra arguments.");
+        }
+        if (nSteps.equals("help")) {
+            help();
         } else {
-            int nSteps = (args[0] != null) ? Integer.parseInt(args[0]) : 200;
-            int nStudents = (args[1] != null) ? Integer.parseInt(args[1]) : 10;
-            int nPackets = (args[2] != null) ? Integer.parseInt(args[2]) : 70;
-            int cost = (args[3] != null) ? Integer.parseInt(args[3]) : 2;
-            
-            SnackBar sb = new SnackBar(nStudents, nPackets, cost);
-            sb.runSnackBar(nSteps);
+            SnackBar sb = new SnackBar(
+                Integer.parseInt(nStudents), 
+                Integer.parseInt(nPackets),
+                Integer.parseInt(cost)
+            );
+            sb.runSnackBar(Integer.parseInt(nSteps));
         }
     } 
 }
