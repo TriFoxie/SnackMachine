@@ -114,9 +114,9 @@ public class SnackBar
                 );
                 sb.runSnackBar(Integer.parseInt(nSteps));
             }   
-        } catch (Exception e) {
-            System.out.println("Error in arguments. Displaying help...");
+        } catch (NumberFormatException e) {
+            System.out.println("Error in argument formatting, displaying help...");
             help();
-        }//Provides more readable and program-specific error message to the user.
+        }
     } 
 }
