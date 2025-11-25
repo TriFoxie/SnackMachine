@@ -71,7 +71,11 @@ public class SnackBar
         for (int step = 1; step <= nSteps; step++) {
             System.out.println("\n\n========== Time Step " + step + " ==========");
             describe();
-            students.get(rnd.nextInt(students.size())).snackTime();
+            if (students.size() > 0) {
+                students.get(rnd.nextInt(students.size())).snackTime();   
+            } else {
+                System.out.println("There are no students. Nothing happened.");
+            }
         }
     }
     
