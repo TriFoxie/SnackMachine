@@ -75,8 +75,11 @@ public class SnackBar
         }
     }
     
+    /**
+     * Help menu to display argument formatting rules.
+     */
     public static void help() {
-        String helpMsg = "========== Help ==========\n" +
+        String helpMsg = "\n========== Help ==========\n" +
             "Usage: java SnackBar <nSteps> <nStudents> <nPackets> <cost>\n" +
             "Ex:    java SnackBar 100 20 50 2\n" +
             "\n" +
@@ -92,23 +95,28 @@ public class SnackBar
     }
     
     public static void main(String[] args) {
-        String nSteps = (1 <= args.length) ? args[0] : "150";
-        String nStudents = (2 <= args.length) ? args[1] : "10";
-        String nPackets = (3 <= args.length) ? args[2] : "10";
-        String cost = (4 <= args.length) ? args[3] : "2";
-        
-        if (args.length > 4) {
-            System.out.println("Too many arguments. Running and discarding extra arguments.");
-        }
-        if (nSteps.equals("help")) {
+        try {
+            String nSteps = (1 <= args.length) ? args[0] : "150";
+            String nStudents = (2 <= args.length) ? args[1] : "10";
+            String nPackets = (3 <= args.length) ? args[2] : "10";
+            String cost = (4 <= args.length) ? args[3] : "2";
+            
+            if (args.length > 4) {
+                System.out.println("Too many arguments. Running and discarding extra arguments.");
+            }
+            if (nSteps.equals("help")) {
+                help();
+            } else {
+                SnackBar sb = new SnackBar(
+                    Integer.parseInt(nStudents), 
+                    Integer.parseInt(nPackets),
+                    Integer.parseInt(cost)
+                );
+                sb.runSnackBar(Integer.parseInt(nSteps));
+            }   
+        } catch (Exception e) {
+            System.out.println("Error in arguments. Displaying help...");
             help();
-        } else {
-            SnackBar sb = new SnackBar(
-                Integer.parseInt(nStudents), 
-                Integer.parseInt(nPackets),
-                Integer.parseInt(cost)
-            );
-            sb.runSnackBar(Integer.parseInt(nSteps));
-        }
+        }//Provides more readable and program-specific error message to the user.
     } 
 }
