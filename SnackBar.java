@@ -35,10 +35,6 @@ public class SnackBar
         }
     }
     
-    private String randomFlavour() {
-        return flavours[rnd.nextInt(flavours.length)];
-    }
-    
     /**
      * Describes the current state of the "simulation". <br><br>
      * Example output:<br><br>
@@ -88,7 +84,7 @@ public class SnackBar
             "Ex:    java SnackBar 100 20 50 2\n" +
             "\n" +
             "Arguments:\n" +
-            " 0 | nSteps:       The amount of steps to run the simulation for.          Default 150.\n" +
+            " 0 | nSteps:       The amount of steps to run the simulation for.          Default 10.\n" +
             " 1 | nStudents:    The amount of students to include in the simulation.    Default 10.\n" +
             " 2 | nPackets:     The amount of packets to include in the snack machine.  Default 10.\n" +
             " 3 | cost:         The cost of individual crisp packets.                   Default 2.\n" +
@@ -98,29 +94,35 @@ public class SnackBar
         System.out.println(helpMsg);
     }
     
+    private String randomFlavour() {
+        return flavours[rnd.nextInt(flavours.length)];
+    }
+    
     public static void main(String[] args) {
-        try {
-            String nSteps = (1 <= args.length) ? args[0] : "150";
-            String nStudents = (2 <= args.length) ? args[1] : "10";
-            String nPackets = (3 <= args.length) ? args[2] : "10";
-            String cost = (4 <= args.length) ? args[3] : "2";
-            
-            if (args.length > 4) {
-                System.out.println("Too many arguments. Running and discarding extra arguments.");
-            }
-            if (nSteps.equals("help")) {
-                help();
-            } else {
+        String nSteps = (1 <= args.length) ? args[0] : "10";
+        String nStudents = (2 <= args.length) ? args[1] : "10";
+        String nPackets = (3 <= args.length) ? args[2] : "10";
+        String cost = (4 <= args.length) ? args[3] : "2";
+        
+        if (args.length > 4) {
+            System.out.println("Too many arguments. Running and discarding extra arguments.");
+        }
+        if (nSteps.equals("help")) {
+            help();
+        } else {
+            try {
                 SnackBar sb = new SnackBar(
                     Integer.parseInt(nStudents), 
                     Integer.parseInt(nPackets),
                     Integer.parseInt(cost)
                 );
                 sb.runSnackBar(Integer.parseInt(nSteps));
-            }   
-        } catch (NumberFormatException e) {
-            System.out.println("Error in argument formatting, displaying help...");
-            help();
+            } catch (NumberFormatException e) {
+                System.out.println("Error in argument formatting, displaying help...");
+                help();
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
         }
     } 
 }
