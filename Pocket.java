@@ -29,7 +29,13 @@ public class Pocket
      * @return  how many pennies are remaining (int).
      */
     public int pennyCount() {
-        return pennies.size();
+        int i = 0;
+        for (Penny penny: pennies) {
+            if (penny != null) {
+                i += 1;
+            }
+        }
+        return i;
     }
     
     /**
@@ -40,7 +46,7 @@ public class Pocket
      */
     public Penny removePenny() {
         if (pennies.size() > 0) {
-            pennies.remove(new Penny());
+            pennies.remove(pennies.iterator().next());
             return new Penny();
         } else {
             return null;
