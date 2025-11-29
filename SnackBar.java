@@ -78,7 +78,7 @@ public class SnackBar
     /**
      * Help menu to display argument formatting rules.
      */
-    public static void help() {
+    public static String help(boolean print) {
         String helpMsg = "\n========== Help ==========\n" +
             "Usage: java SnackBar <nSteps> <nStudents> <nPackets> <cost>\n" +
             "Ex:    java SnackBar 100 20 50 2\n" +
@@ -91,7 +91,10 @@ public class SnackBar
             "If left blank, arguments take their default values.\n" +
             "\n" +
             "'java SnackBar help' to display this message.";
-        System.out.println(helpMsg);
+        if (print) {
+            System.out.println(helpMsg);
+        }
+        return helpMsg;
     }
     
     private String randomFlavour() {
@@ -105,10 +108,10 @@ public class SnackBar
         String cost = (4 <= args.length) ? args[3] : "2";
         
         if (args.length > 4) {
-            System.out.println("Too many arguments. Running and discarding extra arguments.");
+            throw new IllegalArgumentException("Too many arguments.");
         }
         if (nSteps.equals("help")) {
-            help();
+            help(true);
         } else {
             try {
                 SnackBar sb = new SnackBar(
@@ -118,10 +121,7 @@ public class SnackBar
                 );
                 sb.runSnackBar(Integer.parseInt(nSteps));
             } catch (NumberFormatException e) {
-                System.out.println("Error in argument formatting, displaying help...");
-                help();
-            } catch (Exception e) {
-                System.out.println(e.toString());
+                throw new IllegalArgumentException("Error in argument formatting. Help displayed." + help(true));
             }
         }
     } 
